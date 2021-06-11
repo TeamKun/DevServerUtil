@@ -1,0 +1,8 @@
+name: TestServerUtil
+version: ${project.version}
+main: net.kunmc.lab.testserverutil.TestServerUtil
+api-version: 1.16
+commands:
+  tsu:
+    usage: |-
+    default: op
