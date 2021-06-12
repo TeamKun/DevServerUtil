@@ -4,14 +4,14 @@ import org.bukkit.command.CommandSender;
 
 import java.util.List;
 
-public class SVPropCommand implements SubCommand{
+public class SVPropCommand implements SubCommand {
     @Override
     public void run(CommandSender sender, String[] args) {
 
     }
 
     @Override
-    public List<String> tabComplete() {
+    public List<String> tabComplete(CommandSender sender, String[] args) {
         return null;
     }
 }

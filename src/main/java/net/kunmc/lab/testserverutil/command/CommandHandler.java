@@ -13,9 +13,9 @@ import java.util.stream.Collectors;
 
 public class CommandHandler implements CommandExecutor, TabCompleter {
     private final Map<String, SubCommand> subCmdMap = new HashMap<String, SubCommand>() {{
-       put("plugin", new PluginCommand());
-       put("op", new OPCommand());
-       put("serverProperties", new SVPropCommand());
+        put("plugin", new PluginCommand());
+        put("opBlacklist", new OpBlacklistCommand());
+        put("serverProperties", new SVPropCommand());
     }};
 
     @Override
@@ -23,12 +23,11 @@ public class CommandHandler implements CommandExecutor, TabCompleter {
         if (args.length < 1) {
             return false;
         }
-
-        String[] nextArgs = Arrays.copyOfRange(args, 1, args.length);
+        
         if (subCmdMap.containsKey(args[0])) {
-            subCmdMap.get(args[0]).run(sender, nextArgs);
+            subCmdMap.get(args[0]).run(sender, Arrays.copyOfRange(args, 1, args.length));
         } else {
-            sender.sendMessage(ChatColor.RED+"不明なコマンドです.");
+            sender.sendMessage(ChatColor.RED + "不明なコマンドです.");
         }
 
         return true;
@@ -40,8 +39,8 @@ public class CommandHandler implements CommandExecutor, TabCompleter {
             return subCmdMap.keySet().stream().filter(x -> x.startsWith(args[0])).collect(Collectors.toList());
         }
 
-        if (args.length == 2 && subCmdMap.containsKey(args[0])) {
-            return subCmdMap.get(args[0]).tabComplete();
+        if (args.length > 1 && subCmdMap.containsKey(args[0])) {
+            return subCmdMap.get(args[0]).tabComplete(sender, Arrays.copyOfRange(args, 1, args.length));
         }
 
         return Collections.emptyList();

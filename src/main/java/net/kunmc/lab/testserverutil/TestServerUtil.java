@@ -1,6 +1,7 @@
 package net.kunmc.lab.testserverutil;
 
 import net.kunmc.lab.testserverutil.command.CommandHandler;
+import net.kunmc.lab.testserverutil.listener.PlayerJoinListener;
 import org.bukkit.GameRule;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -25,6 +26,13 @@ public final class TestServerUtil extends JavaPlugin {
         CommandHandler commandHandler = new CommandHandler();
         getServer().getPluginCommand("tsu").setExecutor(commandHandler);
         getServer().getPluginCommand("tsu").setTabCompleter(commandHandler);
+
+        saveDefaultConfig();
+        Config.plugin = this;
+        Config.file = getConfig();
+        Config.opBlacklistConfig.blacklist().addAll(getConfig().getStringList("opBlacklist"));
+
+        getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
     }
 
     @Override
