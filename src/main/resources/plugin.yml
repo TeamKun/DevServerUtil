@@ -6,4 +6,5 @@ commands:
   dsu:
     usage: |-
       /dsu opBlacklist <add|remove> <name>
+      /dsu serverProperties <configItem> <value>
     default: op
