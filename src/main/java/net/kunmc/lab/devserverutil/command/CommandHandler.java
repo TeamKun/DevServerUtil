@@ -1,4 +1,4 @@
-package net.kunmc.lab.testserverutil.command;
+package net.kunmc.lab.devserverutil.command;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -23,7 +23,7 @@ public class CommandHandler implements CommandExecutor, TabCompleter {
         if (args.length < 1) {
             return false;
         }
-        
+
         if (subCmdMap.containsKey(args[0])) {
             subCmdMap.get(args[0]).run(sender, Arrays.copyOfRange(args, 1, args.length));
         } else {

@@ -1,14 +1,14 @@
-package net.kunmc.lab.testserverutil;
+package net.kunmc.lab.devserverutil;
 
-import net.kunmc.lab.testserverutil.command.CommandHandler;
-import net.kunmc.lab.testserverutil.listener.PlayerJoinListener;
+import net.kunmc.lab.devserverutil.command.CommandHandler;
+import net.kunmc.lab.devserverutil.listener.PlayerJoinListener;
 import org.bukkit.GameRule;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class TestServerUtil extends JavaPlugin {
-    private static TestServerUtil INSTANCE;
+public final class DevServerUtil extends JavaPlugin {
+    private static DevServerUtil INSTANCE;
 
-    public static TestServerUtil getInstance() {
+    public static DevServerUtil getInstance() {
         return INSTANCE;
     }
 
@@ -24,8 +24,8 @@ public final class TestServerUtil extends JavaPlugin {
         });
 
         CommandHandler commandHandler = new CommandHandler();
-        getServer().getPluginCommand("tsu").setExecutor(commandHandler);
-        getServer().getPluginCommand("tsu").setTabCompleter(commandHandler);
+        getServer().getPluginCommand("dsu").setExecutor(commandHandler);
+        getServer().getPluginCommand("dsu").setTabCompleter(commandHandler);
 
         saveDefaultConfig();
         Config.plugin = this;

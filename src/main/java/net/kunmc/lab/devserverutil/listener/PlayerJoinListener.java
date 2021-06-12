@@ -1,6 +1,6 @@
-package net.kunmc.lab.testserverutil.listener;
+package net.kunmc.lab.devserverutil.listener;
 
-import net.kunmc.lab.testserverutil.Config;
+import net.kunmc.lab.devserverutil.Config;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;

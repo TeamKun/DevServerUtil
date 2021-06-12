@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>net.kunmc.lab</groupId>
-    <artifactId>testserverutil</artifactId>
+    <artifactId>devserverutil</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>TestServerUtil</name>
+    <name>DevServerUtil</name>
 
     <properties>
         <java.version>1.8</java.version>

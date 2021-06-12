@@ -1,4 +1,4 @@
-package net.kunmc.lab.testserverutil;
+package net.kunmc.lab.devserverutil;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;

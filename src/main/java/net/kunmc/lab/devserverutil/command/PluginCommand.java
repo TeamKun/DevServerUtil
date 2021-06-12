@@ -1,4 +1,4 @@
-package net.kunmc.lab.testserverutil.command;
+package net.kunmc.lab.devserverutil.command;
 
 import org.bukkit.command.CommandSender;
 
