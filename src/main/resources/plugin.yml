@@ -7,4 +7,5 @@ commands:
     usage: |-
       /dsu opBlacklist <add|remove> <name>
       /dsu serverProperties <configItem> <value>
+      /dsu plugin <enable|disable> <pluginName>
     default: op
