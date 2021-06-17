@@ -16,6 +16,7 @@ public class CommandHandler implements CommandExecutor, TabCompleter {
         put("plugin", new PluginCommand());
         put("opBlacklist", new OpBlacklistCommand());
         put("serverProperties", new SVPropCommand());
+        put("flySpeed", new FlySpeedCommand());
     }};
 
     @Override

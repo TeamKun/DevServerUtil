@@ -8,4 +8,5 @@ commands:
       /dsu opBlacklist <add|remove> <name>
       /dsu serverProperties <configItem> <value>
       /dsu plugin <enable|disable> <pluginName>
+      /dsu flyspeed <player> <speed>
     default: op
